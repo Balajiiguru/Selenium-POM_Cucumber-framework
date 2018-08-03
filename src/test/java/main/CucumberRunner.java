@@ -10,7 +10,8 @@ import java.util.GregorianCalendar;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import com.google.common.io.Files;
+
+
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -26,6 +27,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+
+import com.google.common.io.Files;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
@@ -97,7 +100,7 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
 	public void setUp() throws Exception {
 		openBrowser();
 		maximizeWindow();
-		implicitWait(30);
+		implicitWait(3);
 		deleteAllCookies();
 
 	}
@@ -106,11 +109,13 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
 
 	@AfterMethod(alwaysRun = true)
 	public void tearDownr(ITestResult result) throws IOException {
-		if (result.isSuccess()) {
+		if (!(result.isSuccess())) {
 			File imageFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			String failureImageFileName = result.getMethod().getMethodName()
 					+ new SimpleDateFormat("MM-dd-yyyy_HH-ss").format(new GregorianCalendar().getTime()) + ".png";
 			File failureImageFile = new File(System.getProperty("user.dir") + "//screenshots//" + failureImageFileName);
+			
+			System.out.println(failureImageFile.getParentFile());
 			failureImageFile.getParentFile().mkdir();
 			failureImageFile.createNewFile();
 			Files.copy(imageFile, failureImageFile);

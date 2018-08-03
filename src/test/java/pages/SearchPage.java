@@ -22,7 +22,13 @@ public class SearchPage{
 	@FindBy(how=How.ID,using = "lst-ib")
 	public WebElement searchBox;
 	
-//Below xpath which will avoid people search for section
+	
+	@FindBy(how=How.NAME,using = "btnK")
+	public WebElement searchButton;
+	
+	
+	
+//xpath to click 3rd link
 	
 	@FindBy(how=How.XPATH,using ="((//div[@class='g']//h3/a[not(ancestor::div[@class='xIleA'])])[3])")
 	public WebElement thirdlink;
