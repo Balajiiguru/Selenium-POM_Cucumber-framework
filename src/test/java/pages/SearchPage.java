@@ -30,9 +30,9 @@ public class SearchPage{
 	
 	
 	
-//xpath to click 3rd link
+// xpath to get search results link
 	
-	@FindBy(how=How.XPATH,using ="((//div[@class='g']//h3/a[not(ancestor::div[@class='xIleA'])]))")
+	@FindBy(how=How.XPATH,using ="(//div[@class='g']//h3/a[not(ancestor::div[@class='xIleA'])])")
 	public List<WebElement> resultslink;
 	
 	
