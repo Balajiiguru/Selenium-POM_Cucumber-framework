@@ -76,7 +76,6 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
 	public void pageLoad(int time) {
 		driver.manage().timeouts().pageLoadTimeout(time, TimeUnit.SECONDS);
 	}
-
 	public void deleteAllCookies() {
 		driver.manage().deleteAllCookies();
 	}
@@ -103,15 +102,7 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
 
 	}
 
-	@AfterClass(alwaysRun = true)
-	public void takeScreenshot() throws IOException {
-		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		File trgtFile = new File(System.getProperty("user.dir") + "//screenshots/screenshot.png");
-		trgtFile.getParentFile().mkdir();
-		trgtFile.createNewFile();
-		Files.copy(scrFile, trgtFile);
-
-	}
+	
 
 	@AfterMethod(alwaysRun = true)
 	public void tearDownr(ITestResult result) throws IOException {
