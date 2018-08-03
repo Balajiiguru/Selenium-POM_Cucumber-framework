@@ -22,9 +22,9 @@ public class SearchPage{
 	@FindBy(how=How.ID,using = "lst-ib")
 	public WebElement searchBox;
 	
+//xpath:((//div[@class="g"]//h3/a[not(ancestor::div[@class="xIleA"])])[3])
 	
-	
-	@FindBy(how=How.XPATH,using ="(//div[@class='rc'])[3]/h3/a")
+	@FindBy(how=How.XPATH,using ="((//div[@class=\"g\"]//h3/a[not(ancestor::div[@class=\"xIleA\"])])[3])")
 	public WebElement thirdlink;
 	
 	

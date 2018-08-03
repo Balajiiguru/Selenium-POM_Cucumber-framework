@@ -33,21 +33,16 @@ public class GoogleSearch extends CucumberRunner {
 	}
 	
 	@When("^I clicked the 3rd top level search results$")
-	public void i_clicked_the_3rd_top_level_search_results() {
+	public void i_clicked_the_3rd_top_level_search_results()throws Throwable {
 		
-		try {
+		
 		pageTitle=searchpage.thirdlink.getText();
 		searchpage.thirdlink.click();
 	}
 	
-		catch (Exception e) {
-			
-			JavascriptExecutor executor = (JavascriptExecutor) driver;
-			executor.executeScript("arguments[0].click();", searchpage.thirdlink);
-				
-		}
 		
-	}
+		
+	
 		
 	@Then("^I should be navigated to clicked link corresponding webpage$")
 	public void _should_be_navigated_to_clicked_link_corresponding_webpage() throws Throwable {
