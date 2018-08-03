@@ -1,6 +1,8 @@
 
 package pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,8 +32,8 @@ public class SearchPage{
 	
 //xpath to click 3rd link
 	
-	@FindBy(how=How.XPATH,using ="((//div[@class='g']//h3/a[not(ancestor::div[@class='xIleA'])])[3])")
-	public WebElement thirdlink;
+	@FindBy(how=How.XPATH,using ="((//div[@class='g']//h3/a[not(ancestor::div[@class='xIleA'])]))")
+	public List<WebElement> resultslink;
 	
 	
 	

@@ -36,8 +36,8 @@ public class GoogleSearch extends CucumberRunner {
 	public void i_clicked_the_3rd_top_level_search_results()throws Throwable {
 		
 		
-		pageTitle=searchpage.thirdlink.getText();
-		searchpage.thirdlink.click();
+		pageTitle=searchpage.resultslink.get(2).getText();
+		searchpage.resultslink.get(2).click();
 	}
 	
 		
