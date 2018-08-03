@@ -19,21 +19,21 @@ public class GoogleSearch extends CucumberRunner {
 	public String pageTitle;
 	
 	@Given("^I navigate to Google page$")
-	public void navigate() throws Throwable {
+	public void i_navigate_to_google_page() throws Throwable {
 		
 		setEnv();
 		
 	}
 	
 	@When("^I perform search using Keyword \"(.*?)\"$")
-	public void search(String text) throws Throwable {
+	public void i_perform_search_using_keyword_something(String text) throws Throwable {
 		
 		searchpage.searchBox.sendKeys(text);
 		searchpage.searchBox.sendKeys(Keys.ENTER);
 	}
 	
 	@When("^I clicked the 3rd top level search results$")
-	public void clicklink() {
+	public void i_clicked_the_3rd_top_level_search_results() {
 		
 		try {
 		pageTitle=searchpage.thirdlink.getText();
@@ -50,7 +50,7 @@ public class GoogleSearch extends CucumberRunner {
 	}
 		
 	@Then("^I should be navigated to clicked link corresponding webpage$")
-	public void webpage() throws Throwable {
+	public void _should_be_navigated_to_clicked_link_corresponding_webpage() throws Throwable {
 		String title = driver.getTitle();
 		if(pageTitle == title) {
 			Assert.assertTrue(true, "navigated to correct page");
