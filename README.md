@@ -1,7 +1,6 @@
 
 
 #### Run Scripts
-* Fork this repo, keep the folder the structure intact
 * Run the testng.xml or mvn clean test since it is an maven project
 * The scripts should run successfully in chrome browser as it is defined in the config.properties file.
 * Target folder should be created with cucumber-html-report and surefire-reports.
