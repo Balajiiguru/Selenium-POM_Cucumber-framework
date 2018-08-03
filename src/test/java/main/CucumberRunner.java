@@ -53,7 +53,7 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
 	public void openBrowser() throws Exception {
 		LoadConfigProperty();
 		 if (config.getProperty("browserType").equals("Chrome")) {
-			String chromeDriverPath = "C:\\Users\\balaj\\Downloads\\chromedriver_win32\\chromedriver.exe";
+			String chromeDriverPath = System.getProperty("user.dir") + "//src//test//resources//Driver//chromedriver.exe";
 			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 			
 			driver = new ChromeDriver();
