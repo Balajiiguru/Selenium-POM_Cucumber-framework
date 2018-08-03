@@ -36,7 +36,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 		features = "src/test/resources/features",
 		glue = "stepdefinition",
 		plugin = {"pretty", "html:target/cucumber-html-report" },
-		tags={"@Regression,@JunitScenario,@TestngScenario"})
+		tags={"@Regression"})
 
 public class CucumberRunner extends AbstractTestNGCucumberTests {
 
