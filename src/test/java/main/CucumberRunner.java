@@ -105,21 +105,6 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
 
 	}
 
-	
-
-	@AfterMethod(alwaysRun = true)
-	public void tearDownr(ITestResult result) throws IOException {
-		if (!(result.isSuccess())) {
-			File imageFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			String failureImageFileName = result.getMethod().getMethodName()
-					+ new SimpleDateFormat("MM-dd-yyyy_HH-ss").format(new GregorianCalendar().getTime()) + ".png";
-			File failureImageFile = new File(System.getProperty("user.dir") + "//screenshots//" + failureImageFileName);
-			failureImageFile.getParentFile().mkdir();
-			failureImageFile.createNewFile();
-			Files.copy(imageFile, failureImageFile);
-		}
-
-	}
 
 	@AfterSuite(alwaysRun = true)
 	public void quit() throws IOException, InterruptedException {
