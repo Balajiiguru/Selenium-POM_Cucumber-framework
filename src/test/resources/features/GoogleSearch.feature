@@ -1,4 +1,4 @@
-Feature: To search cucumber in google
+Feature: select the 3rd result from google search result page
 
     @Regression
    Scenario Outline: Google Search
